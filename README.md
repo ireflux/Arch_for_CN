@@ -1,0 +1,1 @@
+Arch Linux script for CN.

@@ -22,8 +22,42 @@ setup_dns(){
 
 setup_partition(){
     echo "start setup partition..."
-    fdisk /dev/sda
+    echo "o
+    n
     
+
+    
+    
+    w
+    " | fdisk /dev/sda
+    mkfs.ext4 /dev/sda1
+    mount /dev/sda1 /mnt
+}
+
+install_base_system(){
+    echo "install base system..."
+    pacstrap /mnt base base-devel
+}
+
+Configure_the_system(){
+    genfstab -U /mnt >> /mnt/etc/fstab
+    arch-chroot /mnt
+    ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+    hwclock --systohc
+    echo "zh_CN.UTF-8 UTF-8
+    zh_HK.UTF-8 UTF-8 
+    zh_TW.UTF-8 UTF-8 
+    en_US.UTF-8 UTF-8" >> /etc/locale.gen
+    locale-gen
+    echo "LANG=en_US.UTF-8" > /etc/locale.conf
+    echo "sherry" > /etc/hostname
+    echo "127.0.0.1	localhost
+    ::1		localhost
+    127.0.1.1	myhostname.localdomain	myhostname" > /etc/hosts
+}
+
+install_package(){
+    pacman -S vim vim dialog wpa_supplicant ntfs-3g networkmanager intel-ucode
 }
 
 timedatectl set-ntp true

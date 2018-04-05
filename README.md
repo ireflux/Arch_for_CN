@@ -1,8 +1,8 @@
 # Arch Linux script for CN
 
-> 参考资料：
-> https://wiki.archlinux.org/index.php/Installation_guide
-> https://wiki.archlinux.org/index.php/General_recommendations
+> 参考资料：  
+> https://wiki.archlinux.org/index.php/Installation_guide  
+> https://wiki.archlinux.org/index.php/General_recommendations  
 > https://github.com/helmuthdu/aui
 
 ## 脚本未经测试

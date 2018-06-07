@@ -16,7 +16,6 @@ welcome(){
     echo "-> Working internet connection"
     echo "Tip:"
     echo "Pacman stores its downloaded packages in /var/cache/pacman/pkg/ and does not remove the old or uninstalled versions automatically."
-    echo "paccache -r can deletes all cached versions of installed and uninstalled packages, except for the most recent 3."
     echo "Pacman -Syu or yaourt -Syu --aur can synchronizes the repository databases and updates the system's packages."
     echo "yaourt -C can check, edit, merge, or remove *.pac* files"
 }
